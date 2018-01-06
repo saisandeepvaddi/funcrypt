@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Container, Button, Icon } from "semantic-ui-react";
 import { connect } from "react-redux";
 import { signInAction } from "../actions";
-import { auth } from "../firebase";
 
 class Home extends Component {
   render() {

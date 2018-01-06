@@ -6,7 +6,6 @@ import Home from "./Home";
 import { connect } from "react-redux";
 import { initAuth, initKeyboard } from "../actions";
 import { Switch, Route, withRouter } from "react-router-dom";
-import { auth } from "../firebase";
 
 class Main extends Component {
   componentDidMount() {
