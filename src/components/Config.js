@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import {
   Button,
@@ -9,6 +9,7 @@ import {
   Label,
   Container
 } from "semantic-ui-react";
+import { Redirect, withRouter } from "react-router-dom";
 
 class Field extends Component {
   constructor(props) {
@@ -108,14 +109,14 @@ const Alphabet = () => {
 class Config extends Component {
   constructor(props) {
     super(props);
-    this.onSubmit = this.onSubmit.bind(this);
-    this.onCheckboxChange = this.onCheckboxChange.bind(this);
     this.state = {
       digits: true
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.onCheckboxChange = this.onCheckboxChange.bind(this);
   }
 
-  onSubmit(e) {
+  handleSubmit(e) {
     e.preventDefault();
     console.log("Submitted");
   }
@@ -127,10 +128,15 @@ class Config extends Component {
   }
 
   render() {
+    const { signedIn } = this.props;
+
+    if (!signedIn) {
+      return <Redirect to="/" />;
+    }
     return (
       <Container>
         <Header>Keyboard</Header>
-        <Form>
+        <Form onSubmit={this.handleSubmit}>
           <Form.Field>
             <Checkbox
               label="digits"
@@ -144,15 +150,16 @@ class Config extends Component {
               <Alphabet />
             </div>
           </Form.Field>
-          <Button type="submit">Submit</Button>
+          <Button type="submit">Save</Button>
         </Form>
       </Container>
     );
   }
 }
 
-const mapStateToProps = state => {
-  return state;
+const mapStateToProps = ({ auth: { signedIn } }) => {
+  return { signedIn };
 };
 
-export default connect(mapStateToProps, null)(Config);
+export default withRouter(connect(mapStateToProps)(Config));
+// export default Config;
