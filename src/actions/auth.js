@@ -16,15 +16,15 @@ const registerUserInDataBase = user => {
     const userData = pick(user, ["displayName", "photoURL", "email"]);
     userRef.set(userData);
   });
-  usersRef.on("value", snapshot => {});
 };
 
 export const initAuth = () => {
   return (dispatch, getState) => {
     auth.onAuthStateChanged(user => {
       if (user) {
+        registerUserInDataBase(user);
         dispatch(userDetails(user));
-        initKeyboard();
+        dispatch(initKeyboard());
       }
     });
   };
@@ -37,9 +37,9 @@ export const signInAction = () => {
         .signInWithPopup(googleAuthProvider)
         .then(result => {
           const user = result.user;
-          dispatch(userDetails(user));
           registerUserInDataBase(user);
-          initKeyboard();
+          dispatch(userDetails(user));
+          dispatch(initKeyboard());
         })
         .catch(err => {
           console.error(`Error Signing in: ${err.message}`);

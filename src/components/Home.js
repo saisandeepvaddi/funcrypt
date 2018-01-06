@@ -5,9 +5,6 @@ import { signInAction } from "../actions";
 import { auth } from "../firebase";
 
 class Home extends Component {
-  componentDidMount() {
-    console.log(auth.currentUser);
-  }
   render() {
     const { auth } = this.props;
     return (
