@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react";
+import { connect } from "react-redux";
 import {
   Button,
   Checkbox,
@@ -150,4 +151,8 @@ class Config extends Component {
   }
 }
 
-export default Config;
+const mapStateToProps = state => {
+  return state;
+};
+
+export default connect(mapStateToProps, null)(Config);
