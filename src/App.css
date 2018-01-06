@@ -1,0 +1,29 @@
+.Config--keys {
+  display: flex;
+}
+
+.Config--Numbers--container {
+  padding-right: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Config--Alphabet--container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Config--Item {
+  max-width: 500px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+}
+
+.Config--Item--Input {
+  width: 100px !important;
+}
+
+.Config--Item--Label {
+  width: 50px;
+  text-align: center;
+}
