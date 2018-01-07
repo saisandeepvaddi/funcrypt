@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Button, Icon } from "semantic-ui-react";
+import { Button, Icon } from "semantic-ui-react";
 import { connect } from "react-redux";
 import { signInAction } from "../actions";
 

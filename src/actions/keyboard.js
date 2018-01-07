@@ -4,10 +4,17 @@ import {
   CHANGE_KEYBOARD,
   CHANGE_TEMP_KEYBOARD,
   CHANGE_SINGLE_KEY,
-  CHANGE_CURRENT_KEYBOARD
+  CHANGE_CURRENT_KEYBOARD,
+  TOGGLE_KEYBOARD
 } from "../constants";
 
 const defaultKeyboardId = "00001111";
+
+export const toggleKeyboardAction = () => {
+  return {
+    type: TOGGLE_KEYBOARD
+  };
+};
 
 const registerNewKeyboard = async (uid, keyboardId, keyboard) => {
   const keyboardsDataRef = database.ref("/keyboards");

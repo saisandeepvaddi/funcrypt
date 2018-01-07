@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Segment } from "semantic-ui-react";
 import NavBar from "./NavBar";
 import Config from "./Config";
 import Home from "./Home";

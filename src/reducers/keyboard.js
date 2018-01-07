@@ -2,9 +2,11 @@ import {
   CHANGE_KEYBOARD,
   CHANGE_TEMP_KEYBOARD,
   CHANGE_SINGLE_KEY,
-  CHANGE_CURRENT_KEYBOARD
+  CHANGE_CURRENT_KEYBOARD,
+  TOGGLE_KEYBOARD
 } from "../constants";
 const INITIAL_STATE = {
+  showKeyboard: false,
   keyboardId: ""
 };
 
@@ -29,6 +31,11 @@ const keyboardReducer = (state = INITIAL_STATE, action) => {
           ...state.keys,
           ...action.keys
         }
+      };
+    case TOGGLE_KEYBOARD:
+      return {
+        ...state,
+        showKeyboard: !state.showKeyboard
       };
     default:
       return state;

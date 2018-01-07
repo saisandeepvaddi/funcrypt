@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
-import { Menu } from "semantic-ui-react";
+import { Menu, Button } from "semantic-ui-react";
 import { Link, withRouter } from "react-router-dom";
-import { signOutAction } from "../actions";
+import { signOutAction, toggleKeyboardAction } from "../actions";
 import { connect } from "react-redux";
 
 class NavBar extends Component {
@@ -10,24 +10,31 @@ class NavBar extends Component {
 
   render() {
     const { activeItem } = this.state;
-    const { location: { pathname }, auth: { signedIn } } = this.props;
+    const {
+      location: { pathname },
+      auth: { signedIn },
+      showKeyboard,
+      toggleKeyboardAction
+    } = this.props;
 
     return (
       <Fragment>
         <Menu secondary inverted attached="top" color="teal">
-          <Menu.Item
-            name="funcrypt"
-            // active={activeItem === "funcrypt"}
-            onClick={this.handleItemClick}
-            link
-          >
+          <Menu.Item name="funcrypt" onClick={this.handleItemClick} link>
             <Link to="/">funcrypt</Link>
           </Menu.Item>
-
           {signedIn &&
             pathname !== "/config" && (
               <Menu.Item position="right" link>
                 <Link to="/config">Change Keyboard</Link>
+              </Menu.Item>
+            )}
+          {signedIn &&
+            pathname !== "/config" && (
+              <Menu.Item position="right" link>
+                <Button onClick={toggleKeyboardAction}>
+                  {showKeyboard ? "Hide Keyboard" : "Show Keyboard"}
+                </Button>
               </Menu.Item>
             )}
           {signedIn && (
@@ -45,11 +52,14 @@ class NavBar extends Component {
   }
 }
 
-const mapStateToProps = ({ auth }) => {
-  return { auth };
+const mapStateToProps = ({ keyboard, auth }) => {
+  return { showKeyboard: keyboard.showKeyboard, auth };
 };
 
-const NavBarWithAuth = connect(mapStateToProps, { signOutAction })(NavBar);
+const NavBarWithAuth = connect(mapStateToProps, {
+  signOutAction,
+  toggleKeyboardAction
+})(NavBar);
 
 export default withRouter(NavBarWithAuth);
 // export default NavBarWithRouter;

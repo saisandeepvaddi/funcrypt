@@ -54,18 +54,27 @@ body {
   justify-content: center;
 }
 
-.TypeArea--english, .TypeArea--unicode {
+.TypeArea--english--container, .TypeArea--unicode--container {
   padding: 10px;
   margin-left: 5px;
   margin-right: 5px;
+  height: 100%;
+  width: 100%;
 }
 
-.TypeArea--english {
+.TypeArea--english--container {
   flex: 1;
+  height: 100%;
 }
 
- .TypeArea--unicode {
+ .TypeArea--unicode--container {
    flex: 1;
+   height: 100%;
+ }
+
+ .TypeArea--english, .TypeArea--unicode {
+   height: 100% !important;
+   width: 100%;
  }
 
 .Main--container {
@@ -76,4 +85,10 @@ body {
 
 .Home--container {
   height: 100%;
+}
+
+.Keyboard--keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
 }

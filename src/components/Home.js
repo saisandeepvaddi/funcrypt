@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Button, Icon } from "semantic-ui-react";
+import { Container } from "semantic-ui-react";
 import { connect } from "react-redux";
 import PreLogIn from "./PreLogIn";
 import TypeArea from "./TypeArea";

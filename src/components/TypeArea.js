@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { TextArea } from "semantic-ui-react";
 import { connect } from "react-redux";
+import Keyboard from "./Keyboard";
 
 class TypeArea extends Component {
   constructor(props) {
@@ -42,25 +43,34 @@ class TypeArea extends Component {
   render() {
     return (
       <div className="TypeArea--container">
-        <TextArea
-          placeholder="Type here in english"
-          autoHeight
-          className="TypeArea--english"
-          onChange={this.handleEnglishInput}
-        />
-        <TextArea
-          placeholder="Your crypted text appears here"
-          autoHeight
-          className="TypeArea--unicode"
-          value={this.state.unicodeContent}
-        />
+        <div className="TypeArea--english--container">
+          <TextArea
+            placeholder="Type here in english"
+            autoHeight
+            className="TypeArea--english"
+            onChange={this.handleEnglishInput}
+          />
+        </div>
+        <div className="TypeArea--unicode--container">
+          {this.props.signedIn &&
+            this.props.keyboard.showKeyboard && <Keyboard />}
+          <TextArea
+            placeholder="Your crypted text appears here"
+            autoHeight
+            className="TypeArea--unicode"
+            value={this.state.unicodeContent}
+          />
+        </div>
       </div>
     );
   }
 }
 
-const mapStateToProps = ({ keyboard }) => {
+const mapStateToProps = ({ auth, keyboard }) => {
+  const { signedIn } = auth;
+
   return {
+    signedIn,
     keyboard
   };
 };
