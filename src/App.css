@@ -12,6 +12,10 @@ body {
   width: 100%;
 }
 
+.Config--container {
+  padding: 20px;
+}
+
 .Config--keys {
   display: flex;
 }
@@ -67,7 +71,6 @@ body {
 .Main--container {
   height: 100%;
   width: 100%;
-  overflow: hidden;
 }
 
 

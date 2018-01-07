@@ -35,7 +35,7 @@ class Config extends Component {
       return <Redirect to="/" />;
     }
     return (
-      <Container>
+      <Container className="Config--container">
         <Header>Keyboard</Header>
         <Form onSubmit={this.handleSubmit}>
           <Form.Field>
