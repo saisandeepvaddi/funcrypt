@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { TextArea } from "semantic-ui-react";
+import React, { Component, Fragment } from "react";
+import { TextArea, Header } from "semantic-ui-react";
 import { connect } from "react-redux";
 import Keyboard from "./Keyboard";
 
@@ -16,7 +16,8 @@ class TypeArea extends Component {
   componentDidMount() {
     if (this.state.englishContent.length === 0) {
       this.setState({
-        unicodeContent: ""
+        unicodeContent: "",
+        printableContent: ""
       });
     }
   }
@@ -36,14 +37,15 @@ class TypeArea extends Component {
       .join("");
 
     this.setState({
-      unicodeContent: unicode
+      unicodeContent: unicode,
+      printableContent: unicode.replace(/\n/g, "<br />")
     });
   }
 
   render() {
     return (
       <div className="TypeArea--container">
-        <div className="TypeArea--english--container">
+        <div className="TypeArea--english--container not--printable">
           <TextArea
             placeholder="Type here in english"
             autoHeight
@@ -51,7 +53,7 @@ class TypeArea extends Component {
             onChange={this.handleEnglishInput}
           />
         </div>
-        <div className="TypeArea--unicode--container">
+        <div className="TypeArea--unicode--container not--printable">
           {this.props.signedIn &&
             this.props.keyboard.showKeyboard && <Keyboard />}
           <TextArea
@@ -59,6 +61,16 @@ class TypeArea extends Component {
             autoHeight
             className="TypeArea--unicode"
             value={this.state.unicodeContent}
+          />
+        </div>
+        <div className="only--printable">
+          <div className="printable--keyboard">
+            <Header>Keyboard</Header>
+            <Keyboard />
+          </div>
+          <div
+            className="printable--unicode"
+            dangerouslySetInnerHTML={{ __html: this.state.printableContent }}
           />
         </div>
       </div>

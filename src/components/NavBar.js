@@ -18,7 +18,7 @@ class NavBar extends Component {
     } = this.props;
 
     return (
-      <Fragment>
+      <div className="not--printable">
         <Menu secondary inverted attached="top" color="teal">
           <Menu.Item name="funcrypt" onClick={this.handleItemClick} link>
             <NavLink to="/" style={{ color: "white" }}>
@@ -54,6 +54,21 @@ class NavBar extends Component {
                 </Button>
               </Menu.Item>
             )}
+          {signedIn &&
+            pathname !== "/config" && (
+              <Menu.Item>
+                <Button
+                  basic
+                  color="teal"
+                  inverted
+                  onClick={() => {
+                    window.print();
+                  }}
+                >
+                  Print Content
+                </Button>
+              </Menu.Item>
+            )}
           {signedIn && (
             <Menu.Menu position="right">
               <Menu.Item
@@ -64,7 +79,7 @@ class NavBar extends Component {
             </Menu.Menu>
           )}
         </Menu>
-      </Fragment>
+      </div>
     );
   }
 }

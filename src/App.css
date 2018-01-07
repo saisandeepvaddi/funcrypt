@@ -75,6 +75,15 @@ body {
    padding: 5px;
  }
 
+ div.print-cA__wrap, div.print-cA__no-print {
+   height: 100% !important;
+   padding: 0;
+ }
+
+/* .print-cA__print {
+  height: 100%;
+} */
+
 .Main--container {
   height: 90vh;
   width: 100%;
@@ -98,4 +107,9 @@ body {
   flex-direction: column;
   /* justify-content: center; */
   align-items: center;
+}
+
+
+.only--printable {
+  display: none;
 }
