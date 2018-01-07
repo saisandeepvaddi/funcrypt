@@ -1,6 +1,8 @@
 # funcrypt
 
-Fun tool for nerds to create and write in own cryptic script. Something like _Caesar Cipher_ but English alphabet mapped to Unicode characters of own like.
+Fun tool for nerds to create and write in own cryptic script. Something like _Caesar Cipher_ but English alphabet mapped to Unicode characters of own choice.
+
+URL: [https://funcrypt.now.sh](https://funcrypt.now.sh)
 
 > Q) _Why do I need this ?_
 >
