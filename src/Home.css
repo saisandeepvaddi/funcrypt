@@ -1,0 +1,27 @@
+.PreLogin--container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.PreLogin--hero {
+  width: 100%;
+  /* height: 1000px; */
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #2e2e2e;
+  background: #e7e7e7;
+}
+
+.PreLogin--footer {
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  background: #1d1d1d;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

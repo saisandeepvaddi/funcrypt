@@ -37,6 +37,24 @@ class Config extends Component {
     return (
       <Container className="Config--container">
         <Header>Keyboard</Header>
+        <div style={{ paddingBottom: "30px" }}>
+          <p>How ?</p>
+          <p>
+            Get Unicode code points from{" "}
+            <a
+              href="https://unicode-table.com/en/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              unicode-table
+            </a>{" "}
+            or any website. Put Unicode number in "U+1234" or "1234" format.
+          </p>
+          <p>
+            Enter same character to replace them to their original English
+            character. Example: Put 'a' or any invalid number to get 'a' again
+          </p>
+        </div>
         <Form onSubmit={this.handleSubmit}>
           <Form.Field>
             <Checkbox
@@ -51,7 +69,9 @@ class Config extends Component {
               <Alphabet />
             </div>
           </Form.Field>
-          <Button type="submit">Save</Button>
+          <Button type="submit" color="brown">
+            Save
+          </Button>
         </Form>
       </Container>
     );

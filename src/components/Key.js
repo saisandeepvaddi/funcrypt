@@ -19,7 +19,7 @@ const keyStyle = {
   flexDirection: "column",
   width: "50px",
   height: "50px",
-  border: "1px solid magenta",
+  border: "1px solid teal",
   alignItems: "center",
   justifyContent: "center",
   background: "lightyellow"

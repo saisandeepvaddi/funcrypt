@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { Menu, Button } from "semantic-ui-react";
-import { Link, withRouter } from "react-router-dom";
+import { NavLink, withRouter } from "react-router-dom";
 import { signOutAction, toggleKeyboardAction } from "../actions";
 import { connect } from "react-redux";
 
@@ -21,18 +21,35 @@ class NavBar extends Component {
       <Fragment>
         <Menu secondary inverted attached="top" color="teal">
           <Menu.Item name="funcrypt" onClick={this.handleItemClick} link>
-            <Link to="/">funcrypt</Link>
+            <NavLink to="/" style={{ color: "white" }}>
+              <h3>funcrypt</h3>
+            </NavLink>
           </Menu.Item>
           {signedIn &&
             pathname !== "/config" && (
-              <Menu.Item position="right" link>
-                <Link to="/config">Change Keyboard</Link>
+              <Menu.Item>
+                <NavLink
+                  to="/config"
+                  style={{
+                    border: "2px solid teal",
+                    borderRadius: "3px",
+                    padding: "7px",
+                    color: "white"
+                  }}
+                >
+                  Change Keyboard
+                </NavLink>
               </Menu.Item>
             )}
           {signedIn &&
             pathname !== "/config" && (
-              <Menu.Item position="right" link>
-                <Button onClick={toggleKeyboardAction}>
+              <Menu.Item>
+                <Button
+                  basic
+                  color="teal"
+                  inverted
+                  onClick={toggleKeyboardAction}
+                >
                   {showKeyboard ? "Hide Keyboard" : "Show Keyboard"}
                 </Button>
               </Menu.Item>
