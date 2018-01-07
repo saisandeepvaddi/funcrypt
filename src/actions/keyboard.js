@@ -1,4 +1,4 @@
-import { auth, database } from "../firebase";
+import { database } from "../firebase";
 import defaultKeyboard from "../keys";
 import {
   CHANGE_KEYBOARD,
@@ -13,14 +13,14 @@ const registerNewKeyboard = async (uid, keyboardId, keyboard) => {
   const keyboardsDataRef = database.ref("/keyboards");
   const keyboardUserRef = keyboardsDataRef.child(uid);
   const keyboardRef = keyboardUserRef.child(keyboardId);
-  const val = await keyboardRef.update(keyboard);
+  await keyboardRef.update(keyboard);
 };
 
 export const changeSingleKeyAction = (englishKey, newKey) => {
   return {
     type: CHANGE_SINGLE_KEY,
     englishKey,
-    newKey
+    newKey: String(newKey)
   };
 };
 

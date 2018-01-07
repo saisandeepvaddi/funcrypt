@@ -1,3 +1,17 @@
+body {
+  height: 100vh;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
 .Config--keys {
   display: flex;
 }
@@ -26,4 +40,37 @@
 .Config--Item--Label {
   width: 50px;
   text-align: center;
+}
+
+.TypeArea--container {
+  height: calc(100% - 7%);
+  width: 100%;
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.TypeArea--english, .TypeArea--unicode {
+  padding: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.TypeArea--english {
+  flex: 1;
+}
+
+ .TypeArea--unicode {
+   flex: 1;
+ }
+
+.Main--container {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+
+.Home--container {
+  height: 100%;
 }

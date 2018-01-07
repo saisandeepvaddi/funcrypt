@@ -13,14 +13,14 @@ class Main extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="Main--container">
         <NavBar />
-        <Segment attached="bottom">
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/config" component={Config} />
-          </Switch>
-        </Segment>
+        {/* <Segment attached="bottom" compact={false}> */}
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/config" component={Config} />
+        </Switch>
+        {/* </Segment> */}
       </div>
     );
   }

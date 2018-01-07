@@ -1,7 +1,6 @@
 import { auth, googleAuthProvider, database } from "../firebase";
 import { SIGN_IN, SIGN_OUT } from "../constants";
 import pick from "lodash/pick";
-import { registerDatabase } from "@firebase/database";
 import { initKeyboard } from "./keyboard";
 
 const userDetails = user => {
