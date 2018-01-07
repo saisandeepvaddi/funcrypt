@@ -1,24 +1,31 @@
 # funcrypt
 
-Fun tool for nerds to create and write in own cryptic script. Something like _Caesar Cipher_ but English alphabet can be mapped to your own like.
+Fun tool for nerds to create and write in own cryptic script. Something like _Caesar Cipher_ but English alphabet mapped to Unicode characters of own like.
 
-> Q ) I can write some random lines on paper and that will be my script, right ?
+> Q) _Why do I need this ?_
 >
-> Ans ) Exactly. But, you can type here
+> &nbsp;If you want to write down your thoughts that no one else should be able to read. So, create a mapping of English alphabet with random unicode characters.
+>
+> You will memorize them by frequent use.
+>
+> Q) _I can draw some random lines on paper and that can be my script, right ?_
+>
+> &nbsp; Sure. This tool gives interface for that. Instead of random lines, you choose from Unicode characters because they can be typed and printed.
 
-## How ?
+## How?
 
 Collect Unicode character codepoints from [unicode-table](https://unicode-table.com/) or anywhere.
 
-In the app, change keyboard config with Unicodes in "U+1234" or "1234" format for each key.
+In the app, change keyboard config with Unicodes in "U+1234" or "1234" format for each letter.
 
 ## Roadmap
 
-Current deployment is just first version with basics.
+Development just started. Current version is just beta with basics.
 
 Following features may be expected.
 
 * Save / Export cryptic text to pdf
+* Save written documents to cloud
 * Update keyboard mapping from file
 * Random key mapping generation
 * Better UI
