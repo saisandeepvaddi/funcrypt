@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import { TextArea, Header } from "semantic-ui-react";
 import { connect } from "react-redux";
 import Keyboard from "./Keyboard";

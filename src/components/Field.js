@@ -15,7 +15,7 @@ class Field extends Component {
     const input = e.target.value || "";
     const text = String(input);
 
-    if (text.length !== 4 && text.length !== 6) {
+    if (text.length < 4 || text.length > 6) {
       this.setState({
         unicode: this.props.character
       });
@@ -31,12 +31,21 @@ class Field extends Component {
     if (isNaN(codePoint)) {
       return;
     }
-    const unicode = String.fromCodePoint(codePoint);
-    this.setState({
-      unicode
-    });
-
-    this.props.changeSingleKeyAction(this.props.character, unicode);
+    try {
+      const unicode = String.fromCodePoint(codePoint);
+      this.setState({
+        unicode
+      });
+      this.props.changeSingleKeyAction(this.props.character, unicode);
+    } catch (err) {
+      console.log(`Invalid code point. Setting to default`);
+      this.setState({ unicode: this.props.character });
+      this.props.changeSingleKeyAction(
+        this.props.character,
+        this.props.character
+      );
+      return;
+    }
   }
   render() {
     const { character, keyboard: { keys } } = this.props;

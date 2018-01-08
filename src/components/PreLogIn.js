@@ -1,24 +1,26 @@
 import React from "react";
-import { Button, Icon } from "semantic-ui-react";
 import { connect } from "react-redux";
 import { signInAction } from "../actions";
 import "../Home.css";
+import Carousel from "./Carousel";
 
 const PreLogIn = props => {
   return (
     <div className="PreLogin--container">
       <div className="PreLogin--hero">
         <h3>Create your own cryptic keyboards from Unicode characters</h3>
-        <Button color="google plus" onClick={props.signInAction}>
+        <Carousel />
+        {/* <Button color="google plus" onClick={props.signInAction}>
           <Icon name="google plus" /> Sign in with Google
-        </Button>
+        </Button> */}
       </div>
+
       <div className="PreLogin--footer">
-        Made with{" "}
+        Made with &nbsp;
         <span role="img" aria-label="green heart">
-          💚
+          💛
         </span>{" "}
-        by &nbsp;&nbsp;
+        &nbsp; by &nbsp;&nbsp;
         <span>
           <a
             href="https://github.com/saisandeepvaddi"

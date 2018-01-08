@@ -4,9 +4,9 @@
   flex-direction: column;
 }
 .PreLogin--hero {
+  padding-top: 10px;
   width: 100%;
-  /* height: 1000px; */
-  flex: 3;
+  flex: 4;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,4 +24,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.Carousal--container {
+  align-self: center;
+  /* width: 100%; */
+}
+
+.Carousal--Slider {
+  width: 200px;
+  height: 200px;
 }

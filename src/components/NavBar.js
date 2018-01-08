@@ -1,7 +1,7 @@
-import React, { Component, Fragment } from "react";
-import { Menu, Button } from "semantic-ui-react";
+import React, { Component } from "react";
+import { Menu, Button, Icon } from "semantic-ui-react";
 import { NavLink, withRouter } from "react-router-dom";
-import { signOutAction, toggleKeyboardAction } from "../actions";
+import { signOutAction, toggleKeyboardAction, signInAction } from "../actions";
 import { connect } from "react-redux";
 
 class NavBar extends Component {
@@ -25,6 +25,14 @@ class NavBar extends Component {
               <h3>funcrypt</h3>
             </NavLink>
           </Menu.Item>
+          {!signedIn &&
+            pathname === "/" && (
+              <Menu.Item position="right">
+                <Button color="google plus" onClick={this.props.signInAction}>
+                  <Icon name="google plus" /> Sign in with Google
+                </Button>
+              </Menu.Item>
+            )}
           {signedIn &&
             pathname !== "/config" && (
               <Menu.Item>
@@ -90,7 +98,8 @@ const mapStateToProps = ({ keyboard, auth }) => {
 
 const NavBarWithAuth = connect(mapStateToProps, {
   signOutAction,
-  toggleKeyboardAction
+  toggleKeyboardAction,
+  signInAction
 })(NavBar);
 
 export default withRouter(NavBarWithAuth);

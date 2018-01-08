@@ -26,11 +26,11 @@ Development just started. Current version is just beta with basics.
 
 Following features may be expected.
 
-* Save / Export cryptic text to pdf
-* Save written documents to cloud
 * Update keyboard mapping from file
 * Random key mapping generation
+* Better print to pdf
 * Better UI
+* Save written documents to cloud
 
 ## License
 
