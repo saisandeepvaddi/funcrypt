@@ -51,6 +51,7 @@ class TypeArea extends Component {
             autoHeight
             className="TypeArea--english"
             onChange={this.handleEnglishInput}
+            rows="32"
           />
         </div>
         <div className="TypeArea--unicode--container not--printable">
@@ -61,6 +62,7 @@ class TypeArea extends Component {
             autoHeight
             className="TypeArea--unicode"
             value={this.state.unicodeContent}
+            rows="32"
           />
         </div>
         <div className="only--printable">

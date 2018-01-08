@@ -53,8 +53,7 @@ body {
 
 .TypeArea--english--container, .TypeArea--unicode--container {
   padding: 10px;
-  margin-left: 5px;
-  margin-right: 5px;
+
   height: 100%;
   width: 100%;
 }
@@ -62,11 +61,13 @@ body {
 .TypeArea--english--container {
   flex: 1;
   height: 100%;
+  margin-left: 5px;
 }
 
- .TypeArea--unicode--container {
-   flex: 1;
-   height: 100%;
+.TypeArea--unicode--container {
+  flex: 1;
+  height: 100%;
+  margin-right: 5px;
  }
 
  .TypeArea--english, .TypeArea--unicode {
@@ -85,7 +86,7 @@ body {
 } */
 
 .Main--container {
-  height: 90vh;
+  height: 100%;
   width: 100%;
 }
 

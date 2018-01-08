@@ -3,12 +3,15 @@ import { connect } from "react-redux";
 import { signInAction } from "../actions";
 import "../Home.css";
 import Carousel from "./Carousel";
+import { Icon } from "semantic-ui-react";
 
 const PreLogIn = props => {
   return (
     <div className="PreLogin--container">
       <div className="PreLogin--hero">
-        <h3>Create your own cryptic keyboards from Unicode characters</h3>
+        <h3 className="PreLogin--description">
+          Create your own cryptic keyboards from Unicode characters
+        </h3>
         <Carousel />
         {/* <Button color="google plus" onClick={props.signInAction}>
           <Icon name="google plus" /> Sign in with Google
@@ -16,20 +19,32 @@ const PreLogIn = props => {
       </div>
 
       <div className="PreLogin--footer">
-        Made with &nbsp;
-        <span role="img" aria-label="green heart">
-          💛
-        </span>{" "}
-        &nbsp; by &nbsp;&nbsp;
-        <span>
+        <div>
+          Made with &nbsp;
+          <span role="img" aria-label="green heart">
+            💛
+          </span>{" "}
+          &nbsp; by &nbsp;&nbsp;
+          <span>
+            <a
+              href="https://github.com/saisandeepvaddi"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              @saisandeepvaddi
+            </a>
+          </span>
+        </div>
+        <div className="PreLogin--gitub-container">
           <a
-            href="https://github.com/saisandeepvaddi"
+            href="https://github.com/saisandeepvaddi/funcrypt"
             target="_blank"
             rel="noopener noreferrer"
+            className="PreLogin-github-fork-link"
           >
-            @saisandeepvaddi
+            <Icon name="github" size="big" /> Fork project
           </a>
-        </span>
+        </div>
       </div>
     </div>
   );

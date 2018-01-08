@@ -1,7 +1,18 @@
+.PreLogin--description {
+  padding-bottom: 10px;
+}
+
+
+.Home--container {
+  height: 100%;
+}
+
 .PreLogin--container {
   height: 100vh;
+  /* height: 100%; */
   display: flex;
   flex-direction: column;
+  background: #2e2e2e;
 }
 .PreLogin--hero {
   padding-top: 10px;
@@ -17,13 +28,13 @@
 
 .PreLogin--footer {
   flex: 1;
-  height: 100%;
   width: 100%;
   background: #1d1d1d;
   color: white;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  /* flex-direction: column; */
 }
 
 .Carousal--container {
@@ -34,4 +45,16 @@
 .Carousal--Slider {
   width: 200px;
   height: 200px;
+}
+/* 
+.PreLogin--gitub-container {
+  padding-top: 10px;
+} */
+
+a.PreLogin-github-fork-link {
+  color: white;
+}
+
+.PreLogin-github-fork-link:hover {
+  color: teal;
 }
